@@ -75,14 +75,14 @@ svg.i { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-widt
 /* ---------- shared controls ---------- */
 .icon-btn { position: relative; display: inline-grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; border: 0; background: var(--fill); color: var(--text); transition: transform .15s, background .2s; }
 .icon-btn:active { transform: scale(.92); }
-.icon-btn[aria-pressed="true"] { background: var(--accent); color: #fff; }
+.icon-btn[aria-pressed="true"] { background: var(--accent); color: var(--on-accent); }
 .badge { position: absolute; top: -3px; right: -3px; min-width: 18px; height: 18px; padding: 0 5px; border-radius: 99px; background: var(--accent); color: #fff; font-size: .68rem; font-weight: 700; display: grid; place-items: center; border: 2px solid var(--bg); }
 .badge[data-n="0"] { display: none; }
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: 7px; border: 0; border-radius: 12px; padding: 11px 16px; font-size: .94rem; font-weight: 600; transition: transform .15s, background .2s, color .2s; text-decoration: none; }
 .btn:active { transform: scale(.97); }
-.btn-primary { background: var(--accent); color: #fff; }
+.btn-primary { background: var(--accent); color: var(--on-accent); }
 .btn-tinted { background: var(--tint); color: var(--accent-text); }
-.btn-tinted[aria-pressed="true"] { background: var(--accent); color: #fff; }
+.btn-tinted[aria-pressed="true"] { background: var(--accent); color: var(--on-accent); }
 .btn-plain { background: var(--fill); color: var(--text); }
 .btn svg.i { width: 18px; height: 18px; }
 .text-btn { border: 0; background: none; padding: 6px 0; color: var(--accent-text); font-size: .9rem; font-weight: 600; }
@@ -125,7 +125,7 @@ svg.i { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-widt
 .add-btn { display: inline-flex; align-items: center; gap: 5px; border: 0; border-radius: 999px; padding: 6px 12px; background: var(--tint); color: var(--accent-text); font-size: .8rem; font-weight: 600; white-space: nowrap; transition: background .2s, color .2s, transform .15s; }
 .add-btn:active { transform: scale(.94); }
 .add-btn svg.i { width: 15px; height: 15px; stroke-width: 2.2; }
-.add-btn[aria-pressed="true"] { background: var(--accent); color: #fff; }
+.add-btn[aria-pressed="true"] { background: var(--accent); color: var(--on-accent); }
 .empty { color: var(--text2); padding: 30px 0; text-align: center; }
 
 /* ---------- recipe ---------- */
@@ -154,13 +154,13 @@ svg.i { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-widt
 .facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); background: var(--card); border-radius: 18px; margin-top: 14px; box-shadow: var(--shadow); }
 .fact { padding: 12px 6px; text-align: center; display: grid; justify-items: center; gap: 2px; min-width: 0; }
 .fact + .fact { border-left: .5px solid var(--sep); }
-.fact svg.i { color: var(--accent); width: 20px; height: 20px; margin-bottom: 2px; }
+.fact > svg.i { color: var(--accent); width: 20px; height: 20px; margin-bottom: 2px; }
 .fact span { font-size: .7rem; color: var(--text3); font-weight: 500; text-transform: uppercase; letter-spacing: .04em; }
 .fact b { font-size: .92rem; font-weight: 600; font-variant-numeric: tabular-nums; }
 .r-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
 .jumpbar { position: sticky; top: 52px; z-index: 20; margin: 16px -16px 0; padding: 8px 16px; background: var(--navbg); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); }
 .sec { scroll-margin-top: 110px; padding-top: 18px; }
-.sec-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 0 2px 10px; }
+.sec-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 0 2px 10px; }
 .sec-head h2 { font-size: 1.45rem; font-weight: 700; letter-spacing: -0.02em; }
 .sec-head .count { font-size: .86rem; color: var(--text2); font-variant-numeric: tabular-nums; }
 .group { background: var(--card); border-radius: 16px; box-shadow: var(--shadow); overflow: hidden; }
@@ -179,7 +179,7 @@ svg.i { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-widt
 .ilist li + li .irow::before { content: ""; position: absolute; top: 0; left: 52px; right: 0; border-top: .5px solid var(--sep); }
 .irow input { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
 .cb { width: 22px; height: 22px; border-radius: 50%; border: 1.5px solid var(--text3); display: grid; place-items: center; transition: background .2s, border-color .2s, transform .25s cubic-bezier(.3, 1.6, .5, 1); }
-.cb svg { width: 13px; height: 13px; fill: none; stroke: #fff; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 24; stroke-dashoffset: 24; transition: stroke-dashoffset .25s .05s; }
+.cb svg { width: 13px; height: 13px; fill: none; stroke: var(--on-accent); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 24; stroke-dashoffset: 24; transition: stroke-dashoffset .25s .05s; }
 .irow input:checked ~ .cb { background: var(--accent); border-color: var(--accent); transform: scale(1.06); }
 .irow input:checked ~ .cb svg { stroke-dashoffset: 0; }
 .irow input:focus-visible ~ .cb { outline: 2px solid var(--accent); outline-offset: 2px; }
@@ -192,7 +192,8 @@ svg.i { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-widt
 .progress i { display: block; height: 100%; width: 0; background: var(--accent); border-radius: inherit; transition: width .4s cubic-bezier(.2, .8, .2, 1); }
 .steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
 .step { background: var(--card); border-radius: 18px; box-shadow: var(--shadow); padding: 14px 14px 14px 16px; display: grid; gap: 10px; transition: opacity .3s; }
-.step-head { display: grid; grid-template-columns: 30px minmax(0, 1fr) auto; gap: 12px; align-items: start; }
+.step-head { display: grid; grid-template-columns: 34px minmax(0, 1fr) auto; gap: 12px; align-items: start; }
+.step-head .tile { width: 34px; height: 34px; }
 .step-num { width: 30px; height: 30px; border-radius: 50%; background: var(--tint); color: var(--accent-text); display: grid; place-items: center; font-weight: 700; font-size: .9rem; font-variant-numeric: tabular-nums; transition: background .25s, color .25s; }
 .step-of { font-size: .72rem; color: var(--text3); font-weight: 600; text-transform: uppercase; letter-spacing: .05em; }
 .step h3 { font-size: 1.06rem; font-weight: 600; letter-spacing: -0.01em; line-height: 1.3; }
@@ -200,9 +201,9 @@ svg.i { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-widt
 .check svg { width: 15px; height: 15px; fill: none; stroke: #fff; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; opacity: 0; transition: opacity .2s; }
 .step.done .check { background: var(--green); border-color: var(--green); transform: scale(1.06); }
 .step.done .check svg { opacity: 1; }
-.step.done .step-num { background: var(--fill); color: var(--text3); }
+.step.done .step-head .tile { background: var(--fill); color: var(--text3); }
 .step.done .step-body { opacity: .45; }
-.step-body { display: grid; gap: 10px; padding-left: 42px; transition: opacity .3s; }
+.step-body { display: grid; gap: 10px; padding-left: 46px; transition: opacity .3s; }
 .uses { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; margin: 0; padding: 0; }
 .uses li { background: var(--fill); border-radius: 8px; padding: 4px 9px; font-size: .84rem; line-height: 1.35; color: var(--text); }
 .uses b { font-weight: 600; color: var(--accent-text); margin-right: 2px; }
@@ -259,8 +260,9 @@ svg.i { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-widt
 .done-card { width: min(340px, calc(100% - 32px)); margin: auto; background: var(--card); border-radius: 22px; padding: 26px 20px 18px; text-align: center; display: grid; justify-items: center; gap: 8px; animation: pop .45s cubic-bezier(.3, 1.4, .5, 1); align-self: center; }
 @keyframes pop { from { transform: scale(.85); opacity: 0; } to { transform: none; opacity: 1; } }
 .done-card svg.big { width: 72px; height: 72px; }
+.done-card .done-photo svg.big { width: 34px; height: 34px; }
 .done-card svg.big circle { fill: var(--green); }
-.done-card svg.big path { fill: none; stroke: #fff; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 40; stroke-dashoffset: 40; animation: draw .45s .25s forwards; }
+.done-card svg.big path { fill: none; stroke: #fff; stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 40; stroke-dashoffset: 40; animation: draw .45s .25s forwards; }
 @keyframes draw { to { stroke-dashoffset: 0; } }
 .done-card h2 { font-size: 1.35rem; font-weight: 700; margin-top: 4px; }
 .done-card p { color: var(--text2); font-size: .92rem; }
@@ -269,6 +271,42 @@ svg.i { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-widt
 .toast svg.i { width: 17px; height: 17px; color: var(--green); stroke-width: 2.4; }
 @keyframes drop { from { transform: translate(-50%, -20px); opacity: 0; } }
 
+
+/* ---------- subtle colour: one gentle tone per dish ---------- */
+:root { --on-accent: #fff; }
+@media (prefers-color-scheme: dark) { :root { --on-accent: #1C1C1E; } }
+.tone-amber { --accent: #A86500; --accent-text: #8F5600; --tint: rgba(214, 140, 30, .13); }
+.tone-tomato { --accent: #C83A24; --accent-text: #A9301C; --tint: rgba(214, 70, 45, .10); }
+.tone-green { --accent: #2B7F54; --accent-text: #226A45; --tint: rgba(47, 138, 91, .11); }
+@media (prefers-color-scheme: dark) {
+  .tone-amber { --accent: #F0B44C; --accent-text: #F5C26B; --tint: rgba(240, 180, 76, .16); }
+  .tone-tomato { --accent: #FF7A63; --accent-text: #FF8F7C; --tint: rgba(255, 122, 99, .15); }
+  .tone-green { --accent: #5CC28A; --accent-text: #74D19D; --tint: rgba(92, 194, 138, .15); }
+}
+.tile { width: 32px; height: 32px; border-radius: 9px; background: var(--tint); color: var(--accent); display: grid; place-items: center; flex-shrink: 0; transition: background .25s, color .25s; }
+.tile svg.i { width: 18px; height: 18px; }
+/* soft photo glow behind the top of each page */
+.view.recipe, .view.home { position: relative; isolation: isolate; }
+.ambient { position: absolute; z-index: -1; top: 0; left: 50%; width: 100vw; height: 560px; transform: translateX(-50%); background-size: cover; background-position: center; filter: blur(60px) saturate(1.35); opacity: .3; -webkit-mask-image: linear-gradient(to bottom, #000 0%, transparent 100%); mask-image: linear-gradient(to bottom, #000 0%, transparent 100%); pointer-events: none; }
+@media (prefers-color-scheme: dark) { .ambient { opacity: .42; } }
+.ambient-home { position: absolute; z-index: -1; top: -40px; left: 50%; width: 100vw; height: 420px; transform: translateX(-50%); pointer-events: none; overflow: hidden; -webkit-mask-image: linear-gradient(to bottom, #000 0%, transparent 100%); mask-image: linear-gradient(to bottom, #000 0%, transparent 100%); }
+.ambient-home span { position: absolute; top: -60px; width: 46vw; height: 360px; background-size: cover; background-position: center; filter: blur(70px) saturate(1.3); opacity: .26; border-radius: 50%; }
+.ambient-home span:nth-child(1) { left: -8vw; } .ambient-home span:nth-child(2) { left: 27vw; top: -90px; } .ambient-home span:nth-child(3) { right: -8vw; }
+@media (prefers-color-scheme: dark) { .ambient-home span { opacity: .36; } }
+.home-kicker { display: flex; align-items: center; gap: 10px; }
+.avatars { display: inline-flex; }
+.avatars img { width: 26px; height: 26px; border-radius: 50%; object-fit: cover; border: 2px solid var(--bg); }
+.avatars img + img { margin-left: -9px; }
+.course-pill { display: inline-flex; align-items: center; gap: 5px; background: var(--tint); color: var(--accent-text); border-radius: 99px; padding: 3px 9px; font-size: .74rem; font-weight: 600; text-transform: none; letter-spacing: 0; }
+.course-pill svg.i { width: 13px; height: 13px; stroke-width: 2; }
+.sec-title { display: flex; align-items: center; gap: 10px; }
+.fact .tile { width: 34px; height: 34px; border-radius: 50%; margin-bottom: 4px; }
+.fact .tile svg.i { width: 18px; height: 18px; color: var(--accent); margin: 0; }
+.thumb { width: 22px; height: 22px; border-radius: 50%; object-fit: cover; }
+.sl-rec { padding-left: 5px; }
+.done-photo { position: relative; width: 84px; height: 84px; }
+.done-photo img { width: 84px; height: 84px; border-radius: 50%; object-fit: cover; }
+.done-photo svg.big { position: absolute; right: -6px; bottom: -6px; width: 34px; height: 34px; border: 3px solid var(--card); border-radius: 50%; }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
 </style>
 </head>
@@ -295,7 +333,7 @@ svg.i { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-widt
 var RECIPES = [
   {
     id: 'malai-chicken-tikka', no: '01', name: 'Malai Chicken Tikka', course: 'Starter',
-    base: 400, rating: 5, cooked: '2026-10-07', veg: false, notes: [],
+    base: 400, rating: 5, cooked: '2026-10-07', veg: false, notes: [], tone: 'amber',
     tag: 'Creamy, cheesy and cooked in the air fryer.',
     photo: 'photos/malai-chicken-tikka.jpg',
     spec: { chicken: '400 g', marinate: '30 min', cook: '14 min', vessel: 'Air fryer' },
@@ -311,28 +349,28 @@ var RECIPES = [
       ['Parmesan cheese, grated', 'Generous']
     ],
     steps: [
-      { t: 'Wash and cut the chicken', use: [['400 g', 'chicken']],
+      { ic: 'knife', t: 'Wash and cut the chicken', use: [['400 g', 'chicken']],
         x: 'Wash the chicken. Slice the pieces so the marinade can go inside, then put the chicken in a bowl.' },
-      { t: 'Make the marinade', 
+      { ic: 'bowl', t: 'Make the marinade', 
         use: [['4 tbsp', 'dahi'], ['2–3 tbsp', 'melted salted butter'], ['¼', 'lemon, juiced'], ['To taste', 'salt'], ['½–1 spoon', 'ginger garlic paste'], ['Generous', 'oregano'], ['½–¾ spoon', 'red chilli powder'], ['Generous', 'grated parmesan']],
         x: 'Mix all of these together. Taste the marinade to check that the taste is good.' },
-      { t: 'Coat the chicken', use: [['All', 'the marinade'], ['400 g', 'sliced chicken']],
+      { ic: 'bowl', t: 'Coat the chicken', use: [['All', 'the marinade'], ['400 g', 'sliced chicken']],
         x: 'Mix the marinade well into the chicken.' },
-      { t: 'Let it rest', tm: 1800, tl: 'Marinade rest', use: [],
+      { ic: 'clock', t: 'Let it rest', tm: 1800, tl: 'Marinade rest', use: [],
         x: 'Leave the marinated chicken to rest for at least 30 minutes.' },
-      { t: 'Air fry the first side', tm: 420, tl: 'Air fry, first side', use: [],
+      { ic: 'fryer', t: 'Air fry the first side', tm: 420, tl: 'Air fry, first side', use: [],
         x: 'Place the chicken pieces in the air fryer. Cook at 180°C for 7 minutes.' },
-      { t: 'Flip and baste', use: [],
+      { ic: 'flip', t: 'Flip and baste', use: [],
         x: 'Flip the chicken pieces. There will be some oil in the air fryer tray. Pick up this oil with a spoon and pour it all over the pieces.' },
-      { t: 'Air fry the second side', tm: 420, tl: 'Air fry, second side', use: [],
+      { ic: 'fryer', t: 'Air fry the second side', tm: 420, tl: 'Air fry, second side', use: [],
         x: 'Put the chicken back in the air fryer for 7 minutes at 180°C.' },
-      { t: 'Serve hot', use: [],
+      { ic: 'serve', t: 'Serve hot', use: [],
         x: 'Serve hot.' }
     ]
   },
   {
     id: 'butter-chicken-roast', no: '02', name: 'Butter Chicken Roast', course: 'Main course',
-    base: 1000, rating: 5, cooked: '2026-09-19', veg: false, notes: [],
+    base: 1000, rating: 5, cooked: '2026-09-19', veg: false, notes: [], tone: 'tomato',
     tag: 'Chicken roasted in butter with a coarse onion and garlic masala.',
     photo: 'photos/butter-chicken-roast.jpg',
     spec: { chicken: '1 kg', marinate: '15–20 min', cook: '16 min', vessel: 'Kadhai' },
@@ -359,32 +397,32 @@ var RECIPES = [
       ['Green chillies, slit', '4']
     ],
     steps: [
-      { t: 'Fry the onions', 
+      { ic: 'flame', t: 'Fry the onions', 
         use: [['3–3½ medium', 'onions'], ['As needed', 'oil']],
         x: 'Deep fry the onions until golden brown. Keep ½ fried onion aside to put on top while serving.' },
-      { t: 'Marinate the chicken', tm: 900, tl: 'Marination',
+      { ic: 'bowl', t: 'Marinate the chicken', tm: 900, tl: 'Marination',
         use: [['1 kg', 'chicken'], ['1', 'lemon, juiced'], ['3 tbsp', 'ginger garlic green chilli paste'], ['10 tbsp', 'yogurt'], ['2 tsp', 'coriander powder'], ['2 tsp', 'cumin powder'], ['2 tsp', 'black pepper powder'], ['2 tsp', 'garam masala'], ['4 tbsp', 'Kashmiri red chilli powder'], ['1 tsp', 'turmeric'], ['To taste', 'salt'], ['2 tbsp', 'butter']],
         x: 'Marinate the chicken with all of these. Set aside for 15–20 minutes.' },
-      { t: 'Make the roast masala', 
+      { ic: 'blender', t: 'Make the roast masala', 
         use: [['2½–3', 'fried onions'], ['30–40', 'garlic cloves'], ['2 tsp', 'cumin seeds'], ['4 tsp', 'Kashmiri red chilli powder']],
         x: 'Coarsely grind these together. Set the roast masala aside.' },
-      { t: 'Sauté the chicken', tm: 300, tl: 'Sauté the chicken',
+      { ic: 'pan', t: 'Sauté the chicken', tm: 300, tl: 'Sauté the chicken',
         use: [['4 tbsp', 'butter'], ['All', 'marinated chicken']],
         x: 'Heat the butter in a kadhai. Add the marinated chicken and sauté for about 5 minutes.' },
-      { t: 'Cook covered', tm: 300, tl: 'Covered cook', use: [['1 cup', 'hot water']],
+      { ic: 'drop', t: 'Cook covered', tm: 300, tl: 'Covered cook', use: [['1 cup', 'hot water']],
         x: 'Add the hot water, cover and cook for another 5 minutes.' },
-      { t: 'Add the roast masala', tm: 300, tl: 'Cook with roast masala', use: [['All', 'roast masala']],
+      { ic: 'spoon', t: 'Add the roast masala', tm: 300, tl: 'Cook with roast masala', use: [['All', 'roast masala']],
         x: 'Add the roast masala and cook for another 5 minutes, stirring occasionally.' },
-      { t: 'Add the greens', tm: 60, tl: 'Final minute',
+      { ic: 'leaf', t: 'Add the greens', tm: 60, tl: 'Final minute',
         use: [['2 handfuls', 'curry leaves'], ['Most of', 'the chopped coriander'], ['4', 'green chillies, slit']],
         x: 'When the chicken is almost cooked and the masala has thickened, add these and cook for 1 more minute.' },
-      { t: 'Garnish and serve', use: [['½', 'fried onion, kept aside'], ['Rest of', 'the chopped coriander']],
+      { ic: 'serve', t: 'Garnish and serve', use: [['½', 'fried onion, kept aside'], ['Rest of', 'the chopped coriander']],
         x: 'While serving, put the kept fried onion and coriander leaves on top. Serve hot with rotis.' }
     ]
   },
   {
     id: 'village-style-desi-chicken-curry', no: '03', name: 'Village Style Desi Chicken Curry', course: 'Main course',
-    base: 1000, rating: 4, cooked: '2026-08-29', veg: false, notes: [],
+    base: 1000, rating: 4, cooked: '2026-08-29', veg: false, notes: [], tone: 'green',
     tag: 'A rustic one-pot curry cooked in mustard oil.',
     photo: 'photos/village-style-desi-chicken-curry.jpg',
     spec: { chicken: '1 kg', marinate: 'None', cook: '40 min', vessel: 'Pot' },
@@ -409,24 +447,24 @@ var RECIPES = [
       ['Water', '400 ml']
     ],
     steps: [
-      { t: 'Temper the whole spices', 
+      { ic: 'flame', t: 'Temper the whole spices', 
         use: [['2 tbsp', 'mustard oil'], ['1 tsp', 'cumin seeds'], ['1', 'black cardamom'], ['1 small', 'cinnamon stick'], ['3', 'green cardamoms'], ['3', 'cloves']],
         x: 'Heat the mustard oil in a pot over medium heat. Add the whole spices.' },
-      { t: 'Brown the onions', use: [['3', 'onions, finely chopped']],
+      { ic: 'pan', t: 'Brown the onions', use: [['3', 'onions, finely chopped']],
         x: 'Add the onions. Mix well and cook until golden brown.' },
-      { t: 'Add garlic, ginger and tomatoes', 
+      { ic: 'pan', t: 'Add garlic, ginger and tomatoes', 
         use: [['8', 'garlic cloves, chopped'], ['15 g', 'ginger, chopped'], ['2', 'tomatoes, chopped']],
         x: 'Add these to the onions. Mix well and cook until the tomatoes soften.' },
-      { t: 'Add the spices and greens', 
+      { ic: 'spoon', t: 'Add the spices and greens', 
         use: [['1 tsp', 'red chilli powder'], ['½ tsp', 'turmeric'], ['1½ tsp', 'coriander powder'], ['2', 'green chillies, slit'], ['A handful', 'chopped coriander']],
         x: 'Add these to the pot.' },
-      { t: 'Add the chicken', tm: 600, tl: 'Cook the chicken', use: [['1 kg', 'bone-in chicken thighs'], ['2 tsp', 'salt']],
+      { ic: 'pan', t: 'Add the chicken', tm: 600, tl: 'Cook the chicken', use: [['1 kg', 'bone-in chicken thighs'], ['2 tsp', 'salt']],
         x: 'Add the chicken and salt. Mix well and cook for 10 minutes.' },
-      { t: 'Add the water', use: [['400 ml', 'water']],
+      { ic: 'drop', t: 'Add the water', use: [['400 ml', 'water']],
         x: 'Pour in the water and mix well. You can add more water if you prefer a thinner curry.' },
-      { t: 'Cover and cook', tm: 1800, tl: 'Covered cook', use: [],
+      { ic: 'pot', t: 'Cover and cook', tm: 1800, tl: 'Covered cook', use: [],
         x: 'Cover and cook for 30 minutes, keeping the heat on medium throughout.' },
-      { t: 'Ready to serve', use: [],
+      { ic: 'serve', t: 'Ready to serve', use: [],
         x: 'Your village style desi chicken curry is ready.' }
     ]
   }
@@ -453,6 +491,19 @@ var I = {
   play: ic('<path d="M8 5.5 L18 12 L8 18.5 Z"/>'),
   pause: ic('<path d="M9 5.5 V18.5 M15 5.5 V18.5"/>'),
   stop: ic('<rect x="7" y="7" width="10" height="10" rx="1.5"/>'),
+  knife: ic('<path d="M4.5 19.5 L17.5 6.5 C19.8 8.4 19.2 11.4 16.3 13.4 L9.3 19.6 Z"/><path d="M4.5 19.5 L3 21"/>'),
+  bowl: ic('<path d="M3 11.5 H21 A9 7.5 0 0 1 3 11.5 Z"/><path d="M8.5 21 H15.5 M13.5 11.5 L18.5 4"/>'),
+  fryer: ic('<rect x="5" y="3" width="14" height="18" rx="4"/><circle cx="12" cy="13.5" r="3.5"/><path d="M9 6.8 H15"/>'),
+  flip: ic('<path d="M4.5 9.5 A8 8 0 0 1 18.2 6.2 L20 4.5 V9.5 H15"/><path d="M19.5 14.5 A8 8 0 0 1 5.8 17.8 L4 19.5 V14.5 H9"/>'),
+  serve: ic('<path d="M3 19.5 H21"/><path d="M5 16.5 H19"/><path d="M6 16.5 A6 6 0 0 1 18 16.5"/><path d="M12 10.5 V8.5"/>'),
+  blender: ic('<path d="M7 3 H17 L15.3 13.5 H8.7 Z"/><rect x="7" y="13.5" width="10" height="7.5" rx="2"/><path d="M10 7 H14"/><circle cx="12" cy="17.3" r=".6"/>'),
+  drop: ic('<path d="M12 3.5 C12 3.5 6 10.2 6 14.3 a6 6 0 0 0 12 0 C18 10.2 12 3.5 12 3.5 Z"/>'),
+  leaf: ic('<path d="M5 19 C5 10.5 10.5 5 20 4 C19.2 13.2 13.8 19 5 19 Z"/><path d="M5 19 L12.5 11.5"/>'),
+  pot: ic('<path d="M5 9.5 H19 V17 A3 3 0 0 1 16 20 H8 A3 3 0 0 1 5 17 Z"/><path d="M3 9.5 H21 M10 6.5 H14 M12 6.5 V9.5"/>'),
+  spoon: ic('<ellipse cx="8.2" cy="8.2" rx="4.4" ry="3.2" transform="rotate(-45 8.2 8.2)"/><path d="M11 11 L20 20"/>'),
+  basket: ic('<path d="M3 10 H21 L19 20 H5 Z"/><path d="M7.5 10 L10.5 4 M16.5 10 L13.5 4 M9 13.5 V16.5 M12 13.5 V16.5 M15 13.5 V16.5"/>'),
+  starter: ic('<circle cx="12" cy="12" r="8"/><path d="M8 12 H16 M12 8 V16"/>'),
+  main: ic('<circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/>'),
   note: ic('<path d="M5 4 H15 L19 8 V20 H5 Z"/><path d="M15 4 V8 H19 M8.5 12.5 H15.5 M8.5 16 H13"/>'),
   send: ic('<path d="M21 3 L10 14 M21 3 L14.5 21 L10 14 L3 9.5 Z"/>'),
   copy: ic('<rect x="8.5" y="8.5" width="11.5" height="11.5" rx="2"/><path d="M15.5 8.5 V5.5 A1.5 1.5 0 0 0 14 4 H5.5 A1.5 1.5 0 0 0 4 5.5 V14 A1.5 1.5 0 0 0 5.5 15.5 H8.5"/>')
@@ -591,7 +642,7 @@ function renderSheet() {
   var ids = Object.keys(state.list || {});
   if (!ids.length) { sheetBody.innerHTML = '<p class="sl-empty">Your list is empty.<br>Tap <b>List</b> on a recipe card, or <b>Add to list</b> inside a recipe.</p>'; return; }
   var rows = buildList(), have = state.have || {};
-  var recs = ids.map(function (id) { var r = byId(id); return r ? '<span class="sl-rec">' + r.name + ' · ' + fmtGrams(state.list[id]) + '<button data-unlist="' + id + '" aria-label="Remove ' + esc(r.name) + '">' + I.x + '</button></span>' : ''; }).join('');
+  var recs = ids.map(function (id) { var r = byId(id); return r ? '<span class="sl-rec"><img class="thumb" src="' + r.photo + '" alt="">' + r.name + ' · ' + fmtGrams(state.list[id]) + '<button data-unlist="' + id + '" aria-label="Remove ' + esc(r.name) + '">' + I.x + '</button></span>' : ''; }).join('');
   var items = rows.map(function (x) {
     return '<li><label class="irow"><input type="checkbox" data-have="' + esc(x.key) + '"' + (have[x.key] ? ' checked' : '') + '><span class="cb">' + I.check + '</span>' +
       '<span class="iname">' + x.name + (ids.length > 1 ? '<small>' + x.from.join(', ') + '</small>' : '') + '</span><span class="iqty">' + x.qty + '</span></label></li>';
@@ -643,10 +694,10 @@ function cardsHTML() {
   });
   if (!list.length) return '<p class="empty">No recipe matches that search.</p>';
   return '<div class="grid">' + list.map(function (r, i) {
-    return '<article class="card" role="link" tabindex="0" aria-label="Open ' + esc(r.name) + '" data-open="' + r.id + '" style="--i:' + i + '">' +
+    return '<article class="card tone-' + r.tone + '" role="link" tabindex="0" aria-label="Open ' + esc(r.name) + '" data-open="' + r.id + '" style="--i:' + i + '">' +
       '<div class="card-photo"><img src="' + r.photo + '" alt="' + esc(r.name) + ', as I cooked it" loading="lazy"></div>' +
       '<div class="card-body">' +
-        '<div class="card-top"><span>' + r.course + '</span>' + stars(r.rating) + '</div>' +
+        '<div class="card-top"><span class="course-pill">' + (r.course === 'Starter' ? I.starter : I.main) + r.course + '</span>' + stars(r.rating) + '</div>' +
         '<h2>' + r.name + '</h2><p class="card-tag">' + r.tag + '</p>' +
         '<div class="card-meta"><span>' + I.weight + r.spec.chicken + '</span><span>' + I.flame + r.spec.cook + '</span><span>' + I.pan + r.spec.vessel + '</span></div>' +
         '<div class="card-foot"><span class="when">' + vegTag(r.veg) + '<span>Cooked ' + dateStr(r.cooked) + '</span></span>' +
@@ -656,8 +707,10 @@ function cardsHTML() {
 }
 function homeView() {
   var courses = ['All'].concat(RECIPES.map(function (r) { return r.course; }).filter(function (c, i, a) { return a.indexOf(c) === i; }));
-  app.innerHTML = '<div class="view">' +
-    '<div class="home-top"><span class="kicker">' + RECIPES.length + ' recipes · Cooked at home</span><button class="icon-btn" data-openlist aria-label="Open shopping list">' + I.bag + badge() + '</button></div>' +
+  var thumbs = RECIPES.slice(0, 4).map(function (r) { return '<img src="' + r.photo + '" alt="">'; }).join('');
+  var glow = RECIPES.slice(0, 3).map(function (r) { return '<span style="background-image:url(\'' + r.photo + '\')"></span>'; }).join('');
+  app.innerHTML = '<div class="view home"><div class="ambient-home" aria-hidden="true">' + glow + '</div>' +
+    '<div class="home-top"><span class="home-kicker"><span class="avatars" aria-hidden="true">' + thumbs + '</span><span class="kicker">' + RECIPES.length + ' recipes · Cooked at home</span></span><button class="icon-btn" data-openlist aria-label="Open shopping list">' + I.bag + badge() + '</button></div>' +
     '<h1 class="large-title">My Recipe Book</h1>' +
     '<p class="subtitle">Every dish I have cooked, written down so I can cook it again.</p>' +
     '<label class="search">' + I.search + '<input id="search" type="search" placeholder="Search dishes or ingredients" value="' + esc(query) + '" aria-label="Search recipes"></label>' +
@@ -680,15 +733,15 @@ function recipeView(r) {
     var uses = s.use && s.use.length ? '<ul class="uses">' + s.use.map(function (u) { return '<li><b>' + scaleQty(u[0], k, u[1]) + '</b> ' + u[1] + '</li>'; }).join('') + '</ul>' : '';
     var tbtn = s.tm ? '<button class="timer-btn" data-timer="' + s.tm + '" data-label="' + esc(s.tl) + '">' + I.timer + 'Start ' + mins(s.tm) + ' timer</button>' : '';
     return '<li class="step' + (on ? ' done' : '') + '">' +
-      '<div class="step-head"><span class="step-num">' + (i + 1) + '</span><div><p class="step-of">Step ' + (i + 1) + ' of ' + r.steps.length + '</p><h3>' + s.t + '</h3></div>' +
+      '<div class="step-head"><span class="tile">' + (I[s.ic] || I.pan) + '</span><div><p class="step-of">Step ' + (i + 1) + ' of ' + r.steps.length + '</p><h3>' + s.t + '</h3></div>' +
       '<button class="check" data-step="' + key + '" aria-pressed="' + on + '" aria-label="Mark step ' + (i + 1) + ' as done">' + I.check + '</button></div>' +
       '<div class="step-body">' + uses + '<p class="step-text">' + s.x + '</p>' + tbtn + '</div></li>';
   }).join('');
   var notes = r.notes && r.notes.length ? '<ul>' + r.notes.map(function (n) { return '<li>' + n + '</li>'; }).join('') + '</ul>' : '<p>No changes noted yet.</p>';
   var facts = [[I.weight, 'Chicken', fmtGrams(g)], [I.clock, 'Marinate', r.spec.marinate], [I.flame, 'Cook', r.spec.cook], [I.pan, 'Cooked in', r.spec.vessel]]
-    .map(function (f) { return '<div class="fact">' + f[0] + '<span>' + f[1] + '</span><b>' + f[2] + '</b></div>'; }).join('');
+    .map(function (f) { return '<div class="fact"><span class="tile">' + f[0] + '</span><span>' + f[1] + '</span><b>' + f[2] + '</b></div>'; }).join('');
 
-  app.innerHTML = '<div class="view recipe" data-recipe="' + r.id + '">' +
+  app.innerHTML = '<div class="view recipe tone-' + r.tone + '" data-recipe="' + r.id + '"><div class="ambient" aria-hidden="true" style="background-image:url(\'' + r.photo + '\')"></div>' +
     '<nav class="navbar" id="navbar"><button class="nav-back" data-back>' + I.back + 'Recipes</button><span class="nav-title">' + r.name + '</span>' +
       '<div class="nav-actions"><button class="icon-btn" data-share aria-label="Share recipe">' + I.share + '</button>' +
       '<button class="icon-btn" id="wake" aria-pressed="' + (!!lock) + '" aria-label="Keep screen on">' + I.sun + '</button>' +
@@ -700,13 +753,13 @@ function recipeView(r) {
     '<div class="r-actions"><button class="btn btn-tinted" data-addlist="' + r.id + '" aria-pressed="' + inList(r.id) + '">' + addBtnHTML(r.id, true) + '</button>' +
       '<button class="btn btn-tinted" data-share>' + I.share + 'Share</button></div>' +
     '<div class="jumpbar"><div class="segmented" role="group" aria-label="Jump to section"><button data-jump="sec-ing" aria-pressed="true">Ingredients</button><button data-jump="sec-method" aria-pressed="false">Method</button></div></div>' +
-    '<section class="sec" id="sec-ing"><div class="sec-head"><h2>Ingredients</h2><span class="count" id="ing-count"></span></div>' +
+    '<section class="sec" id="sec-ing"><div class="sec-head"><div class="sec-title"><span class="tile">' + I.basket + '</span><h2>Ingredients</h2></div><span class="count" id="ing-count"></span></div>' +
       '<div class="group"><div class="stepper-row"><span class="lbl"><b>Chicken</b><small>Original recipe: ' + fmtGrams(r.base) + '</small></span>' +
         '<div class="stepper"><button data-scale-step="-1" aria-label="Less chicken"' + (wi <= 0 ? ' disabled' : '') + '>−</button><output aria-live="polite">' + fmtGrams(g) + '</output><button data-scale-step="1" aria-label="More chicken"' + (wi >= ws.length - 1 ? ' disabled' : '') + '>+</button></div></div>' +
         (k !== 1 ? '<p class="scale-note">All quantities below are adjusted for ' + fmtGrams(g) + ' of chicken. Cooking times stay the same.</p>' : '') + '</div>' +
       '<div class="group"><ul class="ilist">' + items + '</ul></div>' +
       '<div class="sec-foot"><button class="text-btn" data-reset="i">Clear ticks</button></div></section>' +
-    '<section class="sec" id="sec-method"><div class="sec-head"><h2>Method</h2><span class="count" id="step-count"></span></div>' +
+    '<section class="sec" id="sec-method"><div class="sec-head"><div class="sec-title"><span class="tile">' + I.pan + '</span><h2>Method</h2></div><span class="count" id="step-count"></span></div>' +
       '<div class="progress"><i id="step-bar"></i></div>' +
       '<ol class="steps">' + steps + '</ol>' +
       '<div class="sec-foot"><button class="text-btn" data-reset="s">Clear progress</button></div>' +
@@ -727,7 +780,7 @@ function updateProgress(celebrate) {
 }
 var doneEl = document.getElementById('done');
 function finished(r) {
-  document.getElementById('done-card').innerHTML = '<svg class="big" viewBox="0 0 72 72" aria-hidden="true"><circle cx="36" cy="36" r="36"/><path d="M22 37 L32 47 L51 27"/></svg>' +
+  document.getElementById('done-card').innerHTML = '<div class="done-photo"><img src="' + r.photo + '" alt=""><svg class="big" viewBox="0 0 72 72" aria-hidden="true"><circle cx="36" cy="36" r="36"/><path d="M22 37 L32 47 L51 27"/></svg></div>' +
     '<h2>All done</h2><p>All ' + r.steps.length + ' steps of ' + r.name + ' are complete. Serve it hot.</p><button class="btn btn-primary" id="done-close">Close</button>';
   doneEl.hidden = false;
 }
