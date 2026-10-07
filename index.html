@@ -558,22 +558,22 @@ var RECIPES = [
     ],
     steps: [
       { t: 'Wash and cut the chicken', art: 'slice', use: [['400 g', 'chicken']],
-        x: 'Wash the chicken well. Make deep cuts on each piece so the marinade can go inside. Place the pieces in a large bowl.' },
+        x: 'Wash the chicken. Slice the pieces so the marinade can go inside, then put the chicken in a bowl.' },
       { t: 'Make the marinade', art: 'mix', tip: 'Taste it first',
         use: [['4 tbsp', 'dahi'], ['2–3 tbsp', 'melted salted butter'], ['¼', 'lemon, juiced'], ['To taste', 'salt'], ['½–1 spoon', 'ginger garlic paste'], ['Generous', 'oregano'], ['½–¾ spoon', 'red chilli powder'], ['Generous', 'grated parmesan']],
-        x: 'In a separate bowl, mix all of these together until smooth. Taste the marinade and adjust the salt and chilli before it goes on the chicken.' },
-      { t: 'Coat the chicken', art: 'coat', use: [['All', 'the marinade'], ['400 g', 'cut chicken']],
-        x: 'Pour the marinade over the chicken. Mix with your hands so every piece is fully coated, including inside the cuts.' },
+        x: 'Mix all of these together. Taste the marinade to check that the taste is good.' },
+      { t: 'Coat the chicken', art: 'coat', use: [['All', 'the marinade'], ['400 g', 'sliced chicken']],
+        x: 'Mix the marinade well into the chicken.' },
       { t: 'Let it rest', art: 'rest', tm: 1800, tl: 'Marinade rest', tip: 'At least 30 min', use: [],
-        x: 'Cover the bowl and leave the chicken to rest for at least 30 minutes.' },
+        x: 'Leave the marinated chicken to rest for at least 30 minutes.' },
       { t: 'Air fry the first side', art: 'airfry', tm: 420, tl: 'Air fry, first side', use: [],
         x: 'Place the chicken pieces in the air fryer. Cook at 180°C for 7 minutes.' },
       { t: 'Flip and baste', art: 'flip', tip: 'Use the tray oil', use: [],
-        x: 'Flip each piece. Some oil will have collected in the air fryer tray. Spoon this oil all over the pieces.' },
+        x: 'Flip the chicken pieces. There will be some oil in the air fryer tray. Pick up this oil with a spoon and pour it all over the pieces.' },
       { t: 'Air fry the second side', art: 'airfry', tm: 420, tl: 'Air fry, second side', use: [],
-        x: 'Cook again at 180°C for 7 minutes, until golden with light charring on the edges.' },
+        x: 'Put the chicken back in the air fryer for 7 minutes at 180°C.' },
       { t: 'Serve hot', art: 'plate', use: [],
-        x: 'Take the tikka out of the air fryer and serve it hot.' }
+        x: 'Serve hot.' }
     ]
   },
   {
@@ -603,31 +603,31 @@ var RECIPES = [
       ['Cumin seeds', '2 tsp'],
       ['Hot water', '1 cup'],
       ['Curry leaves', '2 handfuls'],
-      ['Coriander leaves, chopped', 'A large handful'],
+      ['Coriander leaves, chopped', 'As needed'],
       ['Green chillies, slit', '4']
     ],
     steps: [
       { t: 'Fry the onions', art: 'fry', tip: 'Keep ½ for garnish',
-        use: [['3–3½ medium', 'onions, sliced'], ['As needed', 'oil']],
-        x: 'Deep fry the onions until golden brown. Drain them and set aside. Keep ½ fried onion separately for the garnish.' },
+        use: [['3–3½ medium', 'onions'], ['As needed', 'oil']],
+        x: 'Deep fry the onions until golden brown. Keep ½ fried onion aside to put on top while serving.' },
       { t: 'Marinate the chicken', art: 'mix', tm: 900, tl: 'Marination',
         use: [['1 kg', 'chicken'], ['1', 'lemon, juiced'], ['3 tbsp', 'ginger garlic green chilli paste'], ['10 tbsp', 'yogurt'], ['2 tsp', 'coriander powder'], ['2 tsp', 'cumin powder'], ['2 tsp', 'black pepper powder'], ['2 tsp', 'garam masala'], ['4 tbsp', 'Kashmiri red chilli powder'], ['1 tsp', 'turmeric'], ['To taste', 'salt'], ['2 tbsp', 'butter']],
-        x: 'Put the chicken in a large bowl. Add all of these and mix well so every piece is coated. Set aside for 15–20 minutes.' },
+        x: 'Marinate the chicken with all of these. Set aside for 15–20 minutes.' },
       { t: 'Make the roast masala', art: 'grind', tip: 'Coarse, not smooth',
         use: [['2½–3', 'fried onions'], ['30–40', 'garlic cloves'], ['2 tsp', 'cumin seeds'], ['4 tsp', 'Kashmiri red chilli powder']],
-        x: 'Put these in a mixer jar and grind them coarsely. Set the roast masala aside.' },
+        x: 'Coarsely grind these together. Set the roast masala aside.' },
       { t: 'Sauté the chicken', art: 'saute', tm: 300, tl: 'Sauté the chicken',
         use: [['4 tbsp', 'butter'], ['All', 'marinated chicken']],
         x: 'Heat the butter in a kadhai. Add the marinated chicken and sauté for about 5 minutes.' },
       { t: 'Cook covered', art: 'pour', tm: 300, tl: 'Covered cook', use: [['1 cup', 'hot water']],
-        x: 'Pour in the hot water and mix. Cover the kadhai and cook for 5 minutes.' },
+        x: 'Add the hot water, cover and cook for another 5 minutes.' },
       { t: 'Add the roast masala', art: 'add', tm: 300, tl: 'Cook with roast masala', use: [['All', 'roast masala']],
-        x: 'Add the roast masala and cook for 5 minutes, stirring now and then.' },
+        x: 'Add the roast masala and cook for another 5 minutes, stirring occasionally.' },
       { t: 'Add the greens', art: 'garnish', tm: 60, tl: 'Final minute',
-        use: [['2 handfuls', 'curry leaves'], ['A handful', 'chopped coriander'], ['4', 'green chillies, slit']],
+        use: [['2 handfuls', 'curry leaves'], ['As needed', 'chopped coriander'], ['4', 'green chillies, slit']],
         x: 'When the chicken is almost cooked and the masala has thickened, add these and cook for 1 more minute.' },
-      { t: 'Garnish and serve', art: 'roast', use: [['½', 'fried onion, kept aside'], ['A little', 'chopped coriander']],
-        x: 'Top the chicken with the fried onion and coriander leaves. Serve hot with rotis.' }
+      { t: 'Garnish and serve', art: 'roast', use: [['½', 'fried onion, kept aside'], ['As needed', 'chopped coriander']],
+        x: 'While serving, put the kept fried onion and coriander leaves on top. Serve hot with rotis.' }
     ]
   },
   {
@@ -661,7 +661,7 @@ var RECIPES = [
     steps: [
       { t: 'Temper the whole spices', art: 'temper',
         use: [['2 tbsp', 'mustard oil'], ['1 tsp', 'cumin seeds'], ['1', 'black cardamom'], ['1 small', 'cinnamon stick'], ['3', 'green cardamoms'], ['3', 'cloves']],
-        x: 'Heat the mustard oil in a pot over medium heat. Add the whole spices and let them sizzle.' },
+        x: 'Heat the mustard oil in a pot over medium heat. Add the whole spices.' },
       { t: 'Brown the onions', art: 'fry', use: [['3', 'onions, finely chopped']],
         x: 'Add the onions. Mix well and cook until golden brown.' },
       { t: 'Add garlic, ginger and tomatoes', art: 'veg',
@@ -669,15 +669,15 @@ var RECIPES = [
         x: 'Add these to the onions. Mix well and cook until the tomatoes soften.' },
       { t: 'Add the spices and greens', art: 'add',
         use: [['1 tsp', 'red chilli powder'], ['½ tsp', 'turmeric'], ['1½ tsp', 'coriander powder'], ['2', 'green chillies, slit'], ['A handful', 'chopped coriander']],
-        x: 'Add these and mix them into the masala.' },
+        x: 'Add these to the pot.' },
       { t: 'Add the chicken', art: 'saute', tm: 600, tl: 'Cook the chicken', use: [['1 kg', 'bone-in chicken thighs'], ['2 tsp', 'salt']],
-        x: 'Add the chicken and salt. Mix well so the chicken is coated in the masala, then cook for 10 minutes.' },
+        x: 'Add the chicken and salt. Mix well and cook for 10 minutes.' },
       { t: 'Add the water', art: 'pour', tip: 'More water = thinner', use: [['400 ml', 'water']],
-        x: 'Pour in the water and mix well. Add a little more if you want a thinner curry.' },
+        x: 'Pour in the water and mix well. You can add more water if you prefer a thinner curry.' },
       { t: 'Cover and cook', art: 'simmer', tm: 1800, tl: 'Covered cook', use: [],
         x: 'Cover and cook for 30 minutes, keeping the heat on medium throughout.' },
-      { t: 'Serve hot', art: 'curry', use: [],
-        x: 'The curry is ready. Serve it hot.' }
+      { t: 'Ready to serve', art: 'curry', use: [],
+        x: 'Your village style desi chicken curry is ready.' }
     ]
   }
 ];
