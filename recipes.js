@@ -1,0 +1,157 @@
+/* Muskan's CookBook: recipe data.
+   Each recipe: ingredients first (items: [name, quantity, optional note]), then steps.
+   Each step: ic (icon), t (title), use (ingredients used in this step: [quantity, name]), x (how to do it),
+   optional tm (timer seconds) + tl (timer label), optional img (path to a stage photo).
+   base = chicken weight in grams the quantities are written for (used by the quantity changer). */
+var RECIPES = [
+  {
+    id: 'malai-chicken-tikka', no: '01', name: 'Malai Chicken Tikka', course: 'Starter',
+    base: 400, rating: 5, cooked: '2026-10-07', veg: false, notes: [], tone: 'amber', tags: ['North Indian'], quick: ['Air fryer'],
+    tag: 'Creamy, cheesy and cooked in the air fryer.',
+    photo: 'photos/malai-chicken-tikka.jpg',
+    spec: { chicken: '400 g', marinate: '30 min', cook: '14 min', vessel: 'Air fryer' },
+    items: [
+      ['Chicken', '400 g'],
+      ['Dahi (curd)', '4 tbsp'],
+      ['Salted butter, melted', '2–3 tbsp'],
+      ['Lemon juice', '¼ lemon'],
+      ['Salt', 'To taste'],
+      ['Ginger garlic paste', '½–1 spoon'],
+      ['Oregano', 'Generous'],
+      ['Red chilli powder', '½–¾ spoon'],
+      ['Parmesan cheese, grated', 'Generous']
+    ],
+    steps: [
+      { ic: 'knife', t: 'Wash and cut the chicken', use: [['400 g', 'chicken']],
+        x: 'Wash the chicken. Slice the pieces so the marinade can go inside, then put the chicken in a bowl.' },
+      { ic: 'bowl', t: 'Make the marinade', 
+        use: [['4 tbsp', 'dahi'], ['2–3 tbsp', 'melted salted butter'], ['¼', 'lemon, juiced'], ['To taste', 'salt'], ['½–1 spoon', 'ginger garlic paste'], ['Generous', 'oregano'], ['½–¾ spoon', 'red chilli powder'], ['Generous', 'grated parmesan']],
+        x: 'Mix all of these together. Taste the marinade to check that the taste is good.' },
+      { ic: 'bowl', t: 'Coat the chicken', use: [['All', 'the marinade'], ['400 g', 'sliced chicken']],
+        x: 'Mix the marinade well into the chicken.' },
+      { ic: 'clock', t: 'Let it rest', tm: 1800, tl: 'Marinade rest', use: [],
+        x: 'Leave the marinated chicken to rest for at least 30 minutes.' },
+      { ic: 'fryer', t: 'Air fry the first side', tm: 420, tl: 'Air fry, first side', use: [],
+        x: 'Place the chicken pieces in the air fryer. Cook at 180°C for 7 minutes.' },
+      { ic: 'flip', t: 'Flip and baste', use: [],
+        x: 'Flip the chicken pieces. There will be some oil in the air fryer tray. Pick up this oil with a spoon and pour it all over the pieces.' },
+      { ic: 'fryer', t: 'Air fry the second side', tm: 420, tl: 'Air fry, second side', use: [],
+        x: 'Put the chicken back in the air fryer for 7 minutes at 180°C.' },
+      { ic: 'serve', t: 'Serve hot', use: [],
+        x: 'Serve hot.' }
+    ]
+  },
+  {
+    id: 'butter-chicken-roast', no: '02', name: 'Butter Chicken Roast', course: 'Main course',
+    base: 1000, rating: 5, cooked: '2026-09-19', veg: false, notes: [], tone: 'tomato', tags: ['North Indian'], quick: [],
+    tag: 'Chicken roasted in butter with a coarse onion and garlic masala.',
+    photo: 'photos/butter-chicken-roast.jpg',
+    spec: { chicken: '1 kg', marinate: '15–20 min', cook: '16 min', vessel: 'Kadhai' },
+    items: [
+      ['Onions', '3–3½ medium', 'For deep frying'],
+      ['Oil', 'As needed', 'For deep frying the onions'],
+      ['Chicken, curry cut', '1 kg'],
+      ['Lemon juice', '1 lemon'],
+      ['Ginger garlic green chilli paste', '3 tbsp'],
+      ['Yogurt', '10 tbsp'],
+      ['Coriander powder', '2 tsp'],
+      ['Cumin powder', '2 tsp'],
+      ['Black pepper powder', '2 tsp'],
+      ['Garam masala powder', '2 tsp'],
+      ['Kashmiri red chilli powder', '4 tbsp + 4 tsp', '4 tbsp marinade, 4 tsp roast masala'],
+      ['Turmeric powder', '1 tsp'],
+      ['Salt', 'To taste'],
+      ['Butter', '6 tbsp', '2 tbsp marinade, 4 tbsp cooking'],
+      ['Garlic', '30–40 cloves'],
+      ['Cumin seeds', '2 tsp'],
+      ['Hot water', '1 cup'],
+      ['Curry leaves', '2 handfuls'],
+      ['Coriander leaves, chopped', 'A handful'],
+      ['Green chillies, slit', '4']
+    ],
+    steps: [
+      { ic: 'flame', t: 'Fry the onions', 
+        use: [['3–3½ medium', 'onions'], ['As needed', 'oil']],
+        x: 'Deep fry the onions until golden brown. Keep ½ fried onion aside to put on top while serving.' },
+      { ic: 'bowl', t: 'Marinate the chicken', tm: 900, tl: 'Marination',
+        use: [['1 kg', 'chicken'], ['1', 'lemon, juiced'], ['3 tbsp', 'ginger garlic green chilli paste'], ['10 tbsp', 'yogurt'], ['2 tsp', 'coriander powder'], ['2 tsp', 'cumin powder'], ['2 tsp', 'black pepper powder'], ['2 tsp', 'garam masala'], ['4 tbsp', 'Kashmiri red chilli powder'], ['1 tsp', 'turmeric'], ['To taste', 'salt'], ['2 tbsp', 'butter']],
+        x: 'Marinate the chicken with all of these. Set aside for 15–20 minutes.' },
+      { ic: 'blender', t: 'Make the roast masala', 
+        use: [['2½–3', 'fried onions'], ['30–40', 'garlic cloves'], ['2 tsp', 'cumin seeds'], ['4 tsp', 'Kashmiri red chilli powder']],
+        x: 'Coarsely grind these together. Set the roast masala aside.' },
+      { ic: 'pan', t: 'Sauté the chicken', tm: 300, tl: 'Sauté the chicken',
+        use: [['4 tbsp', 'butter'], ['All', 'marinated chicken']],
+        x: 'Heat the butter in a kadhai. Add the marinated chicken and sauté for about 5 minutes.' },
+      { ic: 'drop', t: 'Cook covered', tm: 300, tl: 'Covered cook', use: [['1 cup', 'hot water']],
+        x: 'Add the hot water, cover and cook for another 5 minutes.' },
+      { ic: 'spoon', t: 'Add the roast masala', tm: 300, tl: 'Cook with roast masala', use: [['All', 'roast masala']],
+        x: 'Add the roast masala and cook for another 5 minutes, stirring occasionally.' },
+      { ic: 'leaf', t: 'Add the greens', tm: 60, tl: 'Final minute',
+        use: [['2 handfuls', 'curry leaves'], ['Most of', 'the chopped coriander'], ['4', 'green chillies, slit']],
+        x: 'When the chicken is almost cooked and the masala has thickened, add these and cook for 1 more minute.' },
+      { ic: 'serve', t: 'Garnish and serve', use: [['½', 'fried onion, kept aside'], ['Rest of', 'the chopped coriander']],
+        x: 'While serving, put the kept fried onion and coriander leaves on top. Serve hot with rotis.' }
+    ]
+  },
+  {
+    id: 'village-style-desi-chicken-curry', no: '03', name: 'Village Style Desi Chicken Curry', course: 'Main course',
+    base: 1000, rating: 4, cooked: '2026-08-29', veg: false, notes: [], tone: 'green', tags: ['Home style'], quick: ['One pot'],
+    tag: 'A rustic one-pot curry cooked in mustard oil.',
+    photo: 'photos/village-style-desi-chicken-curry.jpg',
+    spec: { chicken: '1 kg', marinate: 'None', cook: '40 min', vessel: 'Pot' },
+    items: [
+      ['Mustard oil', '2 tbsp'],
+      ['Cumin seeds', '1 tsp'],
+      ['Black cardamom', '1'],
+      ['Cinnamon stick, small', '1'],
+      ['Green cardamoms', '3'],
+      ['Cloves', '3'],
+      ['Onions, finely chopped', '3'],
+      ['Garlic cloves, chopped', '8'],
+      ['Ginger, chopped', '15 g'],
+      ['Tomatoes, chopped', '2'],
+      ['Red chilli powder', '1 tsp'],
+      ['Turmeric powder', '½ tsp'],
+      ['Coriander powder', '1½ tsp'],
+      ['Green chillies, slit', '2'],
+      ['Coriander leaves, chopped', 'A handful'],
+      ['Chicken thighs, bone-in', '1 kg'],
+      ['Salt', '2 tsp'],
+      ['Water', '400 ml']
+    ],
+    steps: [
+      { ic: 'flame', t: 'Temper the whole spices', 
+        use: [['2 tbsp', 'mustard oil'], ['1 tsp', 'cumin seeds'], ['1', 'black cardamom'], ['1 small', 'cinnamon stick'], ['3', 'green cardamoms'], ['3', 'cloves']],
+        x: 'Heat the mustard oil in a pot over medium heat. Add the whole spices.' },
+      { ic: 'pan', t: 'Brown the onions', use: [['3', 'onions, finely chopped']],
+        x: 'Add the onions. Mix well and cook until golden brown.' },
+      { ic: 'pan', t: 'Add garlic, ginger and tomatoes', 
+        use: [['8', 'garlic cloves, chopped'], ['15 g', 'ginger, chopped'], ['2', 'tomatoes, chopped']],
+        x: 'Add these to the onions. Mix well and cook until the tomatoes soften.' },
+      { ic: 'spoon', t: 'Add the spices and greens', 
+        use: [['1 tsp', 'red chilli powder'], ['½ tsp', 'turmeric'], ['1½ tsp', 'coriander powder'], ['2', 'green chillies, slit'], ['A handful', 'chopped coriander']],
+        x: 'Add these to the pot.' },
+      { ic: 'pan', t: 'Add the chicken', tm: 600, tl: 'Cook the chicken', use: [['1 kg', 'bone-in chicken thighs'], ['2 tsp', 'salt']],
+        x: 'Add the chicken and salt. Mix well and cook for 10 minutes.' },
+      { ic: 'drop', t: 'Add the water', use: [['400 ml', 'water']],
+        x: 'Pour in the water and mix well. You can add more water if you prefer a thinner curry.' },
+      { ic: 'pot', t: 'Cover and cook', tm: 1800, tl: 'Covered cook', use: [],
+        x: 'Cover and cook for 30 minutes, keeping the heat on medium throughout.' },
+      { ic: 'serve', t: 'Ready to serve', use: [],
+        x: 'Your village style desi chicken curry is ready.' }
+    ]
+  }
+];
+
+/* Hindi names shown next to ingredients (by exact English name). */
+var HINDI = {
+  'Salted butter, melted': 'Makhan', 'Butter': 'Makhan', 'Lemon juice': 'Nimbu ka ras', 'Salt': 'Namak',
+  'Ginger garlic paste': 'Adrak lehsun paste', 'Ginger garlic green chilli paste': 'Adrak lehsun hari mirch paste',
+  'Red chilli powder': 'Lal mirch powder', 'Kashmiri red chilli powder': 'Kashmiri lal mirch',
+  'Onions': 'Pyaaz', 'Onions, finely chopped': 'Pyaaz', 'Oil': 'Tel', 'Mustard oil': 'Sarson ka tel',
+  'Yogurt': 'Dahi', 'Coriander powder': 'Dhaniya powder', 'Cumin powder': 'Jeera powder', 'Cumin seeds': 'Jeera',
+  'Black pepper powder': 'Kali mirch powder', 'Turmeric powder': 'Haldi', 'Garlic': 'Lehsun', 'Garlic cloves, chopped': 'Lehsun',
+  'Ginger, chopped': 'Adrak', 'Tomatoes, chopped': 'Tamatar', 'Hot water': 'Garam paani', 'Water': 'Paani',
+  'Curry leaves': 'Kadi patta', 'Coriander leaves, chopped': 'Hara dhaniya', 'Green chillies, slit': 'Hari mirch',
+  'Black cardamom': 'Badi elaichi', 'Green cardamoms': 'Hari elaichi', 'Cinnamon stick, small': 'Dalchini', 'Cloves': 'Laung'
+};
