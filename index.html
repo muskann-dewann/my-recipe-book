@@ -497,6 +497,7 @@ function scaleQty(q, k, name) {
   var ctx = (s + ' ' + (name || '')).toLowerCase();
   var step = /tsp|tbsp|spoon|cup|lemon/.test(ctx) ? .25 : /clove|cardamom|chilli|cinnamon|stick/.test(ctx) ? 1 : .5;
   var out = s.replace(new RegExp(NUM, 'g'), function (t) { return fromNum(toNum(t) * k, step); });
+  out = out.replace(/([\d.]*[¼½¾]?)–\1(?![\d¼½¾])/g, '$1');
   return out.replace(/^(.+?) handfuls?$/, function (a, n) { return n === '1' ? 'A handful' : /^[¼½¾]$/.test(n) ? n + ' handful' : n + ' handfuls'; });
 }
 function weights(r) {
