@@ -19,3 +19,5 @@ A personal recipe website, hosted on GitHub Pages at https://muskann-dewann.gith
 - Do not credit the original creators (her choice).
 - Keep text in simple, plain, formal English. Keep each step short enough to fit on one phone screen.
 - Process each new photo the same way (crop black bars, 4:5, 960x1200, light colour correction).
+- Give a size (small, medium or large) for every item counted by the piece, such as onions, tomatoes and lemons. If she has not said the size, ask her.
+- When she cooks a recipe again and reports changes, update the recipe to what she cooked (including `base`) and set `cooked` to the latest date (shown as "Last cooked").

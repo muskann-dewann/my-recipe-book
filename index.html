@@ -417,7 +417,7 @@ var FRAC = { '¼': .25, '½': .5, '¾': .75, '⅓': 1 / 3, '⅔': 2 / 3 };
 var NUM = '(\\d+(?:\\.\\d+)?[¼½¾⅓⅔]?|[¼½¾⅓⅔])';
 function toNum(t) { var m = t.match(/^(\d+(?:\.\d+)?)?([¼½¾⅓⅔])?$/); return m ? (m[1] ? parseFloat(m[1]) : 0) + (m[2] ? FRAC[m[2]] : 0) : 0; }
 function fromNum(v, step) {
-  v = Math.max(step, Math.round(v / step) * step);
+  v = step === 1 ? Math.max(1, Math.ceil(v - .5 - 1e-9)) : Math.max(step, Math.round(v / step) * step);
   var w = Math.floor(v + 1e-9), f = v - w, map = [[.25, '¼'], [.5, '½'], [.75, '¾']];
   for (var i = 0; i < map.length; i++) if (Math.abs(f - map[i][0]) < .01) return (w || '') + map[i][1];
   if (f < .01) return String(w);
@@ -483,7 +483,7 @@ function toggleList(id) {
 }
 function parseSimple(q) {
   q = q.replace(/^A handful$/i, '1 handful');
-  var m = q.match(new RegExp('^' + NUM + '\\s*(tsp|tbsp|g|kg|ml|cup|cups|spoon|lemon|lemons|handful|handfuls)?$'));
+  var m = q.match(new RegExp('^' + NUM + '\\s*((?:small |medium |large )?(?:tsp|tbsp|g|kg|ml|cup|cups|spoon|lemon|lemons|handful|handfuls))?$'));
   if (!m) return null;
   var v = toNum(m[1]), u = m[2] || '';
   if (u === 'kg') { v *= 1000; u = 'g'; }
@@ -495,7 +495,7 @@ function fmtUnit(sum, u) {
   if (u === 'ml') return fmtMl(sum);
   var n = fromNum(sum, .25);
   if (u === 'handful') return n === '1' ? 'A handful' : n + (sum > 1 ? ' handfuls' : ' handful');
-  if (u === 'lemon') return n + (sum > 1 ? ' lemons' : ' lemon');
+  if (/lemon$/.test(u)) return n + ' ' + u + (sum > 1 ? 's' : '');
   return n + (u ? ' ' + u : '');
 }
 function buildList() {
@@ -593,7 +593,7 @@ function cardsHTML() {
         '<div class="card-top"><span class="course-pill">' + (r.course === 'Starter' ? I.starter : I.main) + r.course + '</span>' + stars(r.rating) + '</div>' +
         '<h2>' + r.name + '</h2><p class="card-tag">' + r.tag + '</p><div class="tagline-row">' + tagsHTML(r) + '</div>' +
         '<div class="card-meta"><span>' + I.weight + r.spec.chicken + '</span><span>' + I.flame + r.spec.cook + '</span><span>' + I.pan + r.spec.vessel + '</span></div>' +
-        '<div class="card-foot"><span class="when">' + vegTag(r.veg) + '<span>Cooked ' + dateStr(r.cooked) + '</span></span>' +
+        '<div class="card-foot"><span class="when">' + vegTag(r.veg) + '<span>Last cooked ' + dateStr(r.cooked) + '</span></span>' +
         '<button class="add-btn" data-addlist="' + r.id + '" aria-pressed="' + inList(r.id) + '" aria-label="Add ' + esc(r.name) + ' to shopping list">' + addBtnHTML(r.id) + '</button></div>' +
       '</div></article>';
   }).join('') + '</div>';
@@ -647,7 +647,7 @@ function recipeView(r) {
     '<div class="r-hero"><img src="' + r.photo + '" alt="' + esc(r.name) + ', as I cooked it"></div>' +
     '<div class="r-headwrap"><header class="r-head"><p class="r-course">' + r.course + ' · Recipe ' + r.no + '</p><h1 id="r-title">' + r.name + '</h1><p class="r-tag">' + r.tag + '</p>' +
       '<div class="tagline-row">' + tagsHTML(r) + '</div>' +
-      '<div class="r-meta">' + stars(r.rating) + '<span class="dot-sep">·</span><span>Cooked on ' + dateStr(r.cooked) + '</span><span class="dot-sep">·</span>' + vegTag(r.veg) + '</div></header>' +
+      '<div class="r-meta">' + stars(r.rating) + '<span class="dot-sep">·</span><span>Last cooked on ' + dateStr(r.cooked) + '</span><span class="dot-sep">·</span>' + vegTag(r.veg) + '</div></header>' +
     '<div class="facts">' + facts + '</div></div>' +
     '<div class="r-actions"><button class="btn btn-tinted" data-addlist="' + r.id + '" aria-pressed="' + inList(r.id) + '">' + addBtnHTML(r.id, true) + '</button>' +
       '<button class="btn btn-tinted" data-share>' + I.share + 'Share</button></div>' +
